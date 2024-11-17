@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="img/snake.jpg">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Collision Simulation </title>
+  <style>
+
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">Collision Simulation</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="https://games.plan.com.np/">Home</a></li>
+        <li><a href="#working">How it Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contacts</a></li>
+        <li class="nav__links__btn">
+          <button class="btn">Sign Up</button>
+        </li>
+        <li class="nav__links__btn">
+          <button class="btn">Sign In</button>
+        </li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn btn__primary">Sign Up</button>
+        <button class="btn btn__secondary">Sign In</button>
+      </div>
+    </nav>
+    <div class="section__container header__containe" id="home">
+
+      <div class="game-container">
+        <div id="status" class="emscripten">Downloading...</div>
+        <div id="progress-container" class="emscripten">
+          <progress id="progress" max="100" value="0"></progress>
+        </div>
+        <canvas id="canvas" class="emscripten" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+      </div>
+      <div class="controls">
+        <button onclick='location.href="https://github.com/GhimirePlan/Web_game-using-Raylib-and-C-"'>
+          <i class="fas fa-download"></i> Download
+        </button>
+        <button id="btn-fullscreen" onclick="Module.requestFullscreen(document.documentElement)">
+          <i class="fas fa-expand"></i> FULLSCREEN
+        </button>
+        <button id="btn-audio" onclick="toggleAudio()">
+          <i class="fas fa-volume-mute"></i> MUTE
+        </button>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <section class="section__container steps__container" id="working">
+    <p class="section__subheader">HOW IT WORKS</p>
+    <h2 class="section__header">Collision Simulation working steps</h2>
+    <div class="steps__grid">
+      <div class="steps__card">
+        <span><i class="ri-remote-control-2-line"></i></span>
+        <h4>Control the Snake</h4>
+        <p>
+          Use the arrow keys to navigate the snake on the screen, guiding it towards food items to grow in length.
+        </p>
+      </div>
+      <div class="steps__card">
+        <span><i class="ri-coins-fill"></i></span>
+        <h4>Collect and Avoid</h4>
+        <p>
+          Eat the food items that appear randomly on the screen to earn points and increase the snake's length. Avoid
+          running into the snake's own body or the walls to continue playing.
+        </p>
+      </div>
+      <div class="steps__card">
+        <span><i class="ri-bookmark-3-fill"></i></span>
+        <h4>Score and Compete</h4>
+        <p>
+          The game tracks your score based on the number of food items collected. Aim to achieve the highest score
+          possible before the snake collides with itself or the screen edges, ending the game.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section__container experience__container" id="about">
+    <p class="section__subheader">About This Game</p>
+    <h2 class="section__header">
+      We are ensuring the best user experience
+    </h2>
+    <div class="experience__content">
+      <div class="experience__card">
+        <span><i class="ri-game-line"></i></span>
+        <h4>Classic snake gameplay</h4>
+      </div>
+      <div class="experience__card">
+        <span><i class="ri-remote-control-2-line"></i></span>
+        <h4>Intuitive controls provided</h4>
+      </div>
+      <div class="experience__card">
+        <span><i class="ri-bank-card-fill"></i></span>
+        <h4>Engaging graphics experience</h4>
+      </div>
+      <div class="experience__card">
+        <span><i class="ri-star-smile-line"></i></span>
+        <h4>Smooth animations ensured
+        </h4>
+      </div>
+      <div class="experience__card">
+        <span><<i class="ri-group-line"></i></span>
+        <h4>Suitable for all ages</h4>
+      </div>
+      <div class="experience__card">
+        <span><i class="ri-award-line"></i></span>
+        <h4>Score tracking</h4>
+      </div>
+      <img src="./assests/bg.png" alt="experience" />
+    </div>
+  </section>
+
+  <section class="section__container download__container" id="contact">
+    <div class="download__grid">
+      <div class="download__content">
+        <h2 class="section__header">Download the classic Snake Game for free!</h2>
+        <p>
+          Enjoy endless hours of retro fun
+        </p>
+        <div class="download__links">
+          <a href="#">
+            <img src="assets/store.jpg" alt="app store" />
+          </a>
+        </div>
+      </div>
+      <div class="download__image">
+        <img src="assets/download.png" alt="download" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h4>Our Products</h4>
+        <ul class="footer__links">
+          <li><a href="#">XXXX</a></li>
+          <li><a href="#">XXXX</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <ul class="footer__links">
+          <li><a href="#">XXXX</a></li>
+          <li><a href="#">XXXX</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <ul class="footer__links">
+          <li><a href="#">XXXX</a></li>
+          <li><a href="#">XXXX</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Extras</h4>
+        <ul class="footer__links">
+          <li><a href="#">XXXX</a></li>
+          <li><a href="#">XXXX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="section__container footer__bar">
+      <h4>Snake Game</h4>
+      <p>Copyright © 2024 PlanGames. All rights reserved.</p>
+      <ul class="footer__socials">
+        <li>
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="ri-google-fill"></i></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="main.js"></script>
+  <script>
+    var statusElement = document.querySelector("#status"),
+      progressElement = document.querySelector("#progress"),
+      Module = {
+        preRun: [],
+        postRun: [],
+        print: function () {
+          var e = document.querySelector("#output");
+          return e && (e.value = ""), function (t) {
+            arguments.length > 1 && (t = Array.prototype.slice.call(arguments).join(" ")), console.log(t), e && (e.value += t + "\n", e.scrollTop = e.scrollHeight)
+          }
+        }(),
+        printErr: function (e) {
+          arguments.length > 1 && (e = Array.prototype.slice.call(arguments).join(" ")), console.error(e)
+        },
+        canvas: function () {
+          var e = document.querySelector("#canvas");
+          return e.addEventListener("webglcontextlost", function (e) { alert("WebGL context lost. You will need to reload the page."), e.preventDefault() }, !1), e
+        }(),
+        setStatus: function (e) {
+          if (Module.setStatus.last || (Module.setStatus.last = { time: Date.now(), text: "" }), e !== Module.setStatus.last.text) {
+            var t = e.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/), n = Date.now();
+            t && n - Module.setStatus.last.time < 30 || (Module.setStatus.last.time = n, Module.setStatus.last.text = e, t ? (e = t[1], progressElement.value = 100 * parseInt(t[2]), progressElement.max = 100 * parseInt(t[4]), progressElement.hidden = !0) : (progressElement.value = null, progressElement.max = null, progressElement.hidden = !0, e || (spinnerElement.style.display = "none")), statusElement.innerHTML = e)
+          }
+        },
+        totalDependencies: 0,
+        monitorRunDependencies: function (e) {
+          this.totalDependencies = Math.max(this.totalDependencies, e), Module.setStatus(e ? "Preparing... (" + (this.totalDependencies - e) + "/" + this.totalDependencies + ")" : "All downloads complete.")
+        },
+        requestFullscreen: function (element) {
+          if (element.requestFullscreen) {
+            element.requestFullscreen();
+          } else if (element.mozRequestFullScreen) { // Firefox
+            element.mozRequestFullScreen();
+          } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            element.webkitRequestFullscreen();
+          } else if (element.msRequestFullscreen) { // IE/Edge
+            element.msRequestFullscreen();
+          }
+        }
+      };
+
+    Module.setStatus("Downloading...");
+    window.onerror = function () {
+      Module.setStatus("Exception thrown, see JavaScript console");
+      spinnerElement.style.display = "none";
+      Module.setStatus = function (e) {
+        e && Module.printErr("[post-exception status] " + e)
+      }
+    };
+  </script>
+  <script async type="text/javascript" src="g.js"></script>
+  <script>
+    function toggleAudio() {
+      var audioBtn = document.getElementById("btn-audio");
+      if (audioBtn.innerHTML.includes("MUTE")) {
+        audioBtn.innerHTML = '<i class="fas fa-volume-up"></i> UNMUTE';
+      } else {
+        audioBtn.innerHTML = '<i class="fas fa-volume-mute"></i> MUTE';
+      }
+    }
+  </script>
+  <script>
+    document.addEventListener('keydown', function (event) {
+      // Check if the key pressed is one of the arrow keys
+      if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        // Prevent the default action (scrolling)
+        event.preventDefault();
+      }
+    });
+  </script>
+  <script>
+    function isMobileDevice() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    window.onload = function() {
+        if (isMobileDevice()) {
+            alert("Warning: This game is not compatible with mobile devices. Please use a desktop or laptop for the best experience.");
+        }
+    };
+</script>
+</body>
+
+</html>
