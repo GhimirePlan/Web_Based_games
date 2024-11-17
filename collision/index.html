@@ -282,6 +282,14 @@
             alert("Warning: This game is not compatible with mobile devices. Please use a desktop or laptop for the best experience.");
         }
     };
+
+    document.addEventListener('keydown', function(event) {
+        // Check if the pressed key is the spacebar (key code 32)
+        if (event.key === ' ' || event.keyCode === 32) {
+            // Prevent the default scrolling behavior
+            event.preventDefault();
+        }
+    });
 </script>
 </body>
 
