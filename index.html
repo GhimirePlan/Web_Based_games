@@ -89,44 +89,41 @@
                 <p class="featured-desc">"PlanGames" is an exhilarating new adventure web game platform developed using
                     C++ and the Raylib library. Whether you're a seasoned gamer or a newcomer, we promise to
                     provide hours of entertainment.</p>
-                <a href="./snake">
+                <a href="./pong">
                     <button class="featured-button">Play Now</button></a>
                 <button class="featured-button2">Download Now</button></a>
             </div>
             <div class="movie-list-container" id="releases">
                 <h1 class="movie-list-title">NEW RELEASES</h1>
                 <div class="movie-list-wrapper">
-                    <div class="movie-list">
+                    <i class="fas fa-chevron-left arrow arrow-left"></i>
+                    <div class="movie-list" id="movieList">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/snake.jpeg" alt="">
                             <span class="movie-list-item-title">Snake Game</span>
-                            <p class="movie-list-item-desc">Web-integrated Snake game using C++ and Raylib,
-                                featuring classic gameplay with real-time interactions and seamless user experience.</p>
-                            <a href="./snake">
-                                <button class="movie-list-item-button">Play</button></a>
+                            <p class="movie-list-item-desc">Web-integrated Snake game using C++ and Raylib, featuring classic gameplay with real-time interactions and seamless user experience.</p>
+                            <a href="./snake"><button class="movie-list-item-button">Play</button></a>
                             <button class="movie-list-item-button2">Download</button>
                         </div>
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="./collision/assests/logo.png" alt="">
                             <span class="movie-list-item-title">Collision Simulation</span>
-                            <p class="movie-list-item-desc">Web-integrated collision simulation game using
-                                C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
-                            <a href="./collision">
-                                <button class="movie-list-item-button">Play</button></a>
+                            <p class="movie-list-item-desc">Web-integrated collision simulation game using C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
+                            <a href="./collision"><button class="movie-list-item-button">Play</button></a>
                             <button class="movie-list-item-button2">Download</button>
                         </div>
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="./pong/assests/loogo.jpg" alt="">
                             <span class="movie-list-item-title">Pong Game</span>
-                            <p class="movie-list-item-desc">Web-integrated Pong game using
-                                C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
-                            <a href="./pong">
-                                <button class="movie-list-item-button">Play</button></a>
+                            <p class="movie-list-item-desc">Web-integrated Pong game using C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
+                            <a href="./pong"><button class="movie-list-item-button">Play</button></a>
                             <button class="movie-list-item-button2">Download</button>
                         </div>
-                        <i class="fas fa-chevron-right arrow"></i>
                     </div>
+                    <i class="fas fa-chevron-right arrow arrow-right"></i>
                 </div>
+            </div>
+            
 
                 <div class="featured-content" id="about"
                     style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg');">
@@ -212,6 +209,49 @@
     </div>
 
     <script src="./app.js"></script>
+  
+<script>
+    const movieList = document.getElementById('movieList');
+    const arrowLeft = document.querySelector('.arrow-left');
+    const arrowRight = document.querySelector('.arrow-right');
+    let currentPosition = 0;
+    const itemWidth = 320; // Width of each item plus margin
+    const maxScrollLeft = movieList.scrollWidth - movieList.clientWidth;
+
+    // Function for manual sliding (left and right)
+    arrowRight.addEventListener('click', () => {
+        if (Math.abs(currentPosition) < maxScrollLeft) {
+            currentPosition -= itemWidth;
+            if (Math.abs(currentPosition) > maxScrollLeft) {
+                currentPosition = -maxScrollLeft; // Prevent overscrolling
+            }
+            movieList.style.transform = `translateX(${currentPosition}px)`;
+        }
+    });
+
+    arrowLeft.addEventListener('click', () => {
+        if (currentPosition < 0) {
+            currentPosition += itemWidth;
+            if (currentPosition > 0) {
+                currentPosition = 0; // Prevent overscrolling past the start
+            }
+            movieList.style.transform = `translateX(${currentPosition}px)`;
+        }
+    });
+
+    // Auto-scroll feature every 3 seconds
+    function autoSlide() {
+        if (Math.abs(currentPosition) < maxScrollLeft) {
+            currentPosition -= itemWidth;
+        } else {
+            currentPosition = 0; // Reset to the start
+        }
+        movieList.style.transform = `translateX(${currentPosition}px)`;
+    }
+
+    // Start auto-sliding every 3 seconds
+    setInterval(autoSlide, 20000); // 3 seconds interval
+</script>
 </body>
 
 </html>

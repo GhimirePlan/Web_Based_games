@@ -298,13 +298,18 @@ body {
     transition-timing-function:cubic-bezier(0.5, 3, 0, 1);
 }
 .arrow {
-  font-size: 120px;
+  font-size: 50px;
   position: absolute;
-  top: 90px;
+  top: 120px;
   right: 0;
   color: lightgray;
   opacity: 0.5;
   cursor: pointer;
+}
+
+.arrow-left{
+  z-index: 1;
+  left: 0px;
 }
 
 .container.active {

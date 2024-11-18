@@ -274,14 +274,17 @@
   </script>
   <script>
     function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+  
+  window.onload = function() {
+      if (isMobileDevice()) {
+          window.location.href = './pong_mobile.html'; // Redirects to the specified URL
+      
+      }
 
-    window.onload = function() {
-        if (isMobileDevice()) {
-            alert("Warning: This game is not compatible with mobile devices. Please use a desktop or laptop for the best experience.");
-        }
-    };
+  };
+  
     
 </script>
 </body>
