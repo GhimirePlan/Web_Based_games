@@ -53,9 +53,9 @@
         <canvas id="canvas" class="emscripten" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
       </div>
       <div class="controls">
-        <button onclick='location.href="https://github.com/GhimirePlan/Web_game-using-Raylib-and-C-"'>
+        <a href="https://github.com/GhimirePlan/Web_Based_games-using-Raylib-and-CPP/raw/refs/heads/main/collision/game.exe"><button>
           <i class="fas fa-download"></i> Download
-        </button>
+        </button></a>
         <button id="btn-fullscreen" onclick="Module.requestFullscreen(document.documentElement)">
           <i class="fas fa-expand"></i> FULLSCREEN
         </button>
@@ -73,25 +73,23 @@
     <div class="steps__grid">
       <div class="steps__card">
         <span><i class="ri-remote-control-2-line"></i></span>
-        <h4>Control the Snake</h4>
+        <h4>Control the Object</h4>
         <p>
-          Use the arrow keys to navigate the snake on the screen, guiding it towards food items to grow in length.
+          Navigate carefully to interact with other elements while avoiding collisions.
         </p>
       </div>
       <div class="steps__card">
         <span><i class="ri-coins-fill"></i></span>
-        <h4>Collect and Avoid</h4>
+        <h4>Simulate Interaction</h4>
         <p>
-          Eat the food items that appear randomly on the screen to earn points and increase the snake's length. Avoid
-          running into the snake's own body or the walls to continue playing.
+          Avoid collisions with obstacles, edges, or self-intersecting paths, as they simulate failure points.
         </p>
       </div>
       <div class="steps__card">
         <span><i class="ri-bookmark-3-fill"></i></span>
-        <h4>Score and Compete</h4>
+        <h4>Track and Optimize</h4>
         <p>
-          The game tracks your score based on the number of food items collected. Aim to achieve the highest score
-          possible before the snake collides with itself or the screen edges, ending the game.
+          Strive for the highest score or optimal path without triggering undesired collisions to prolong the simulation and maximize performance.
         </p>
       </div>
     </div>
@@ -105,7 +103,7 @@
     <div class="experience__content">
       <div class="experience__card">
         <span><i class="ri-game-line"></i></span>
-        <h4>Classic snake gameplay</h4>
+        <h4>Classic Gameplay</h4>
       </div>
       <div class="experience__card">
         <span><i class="ri-remote-control-2-line"></i></span>
@@ -122,7 +120,7 @@
       </div>
       <div class="experience__card">
         <span><<i class="ri-group-line"></i></span>
-        <h4>Suitable for all ages</h4>
+        <h4>Universal Appeal</h4>
       </div>
       <div class="experience__card">
         <span><i class="ri-award-line"></i></span>
@@ -135,20 +133,17 @@
   <section class="section__container download__container" id="contact">
     <div class="download__grid">
       <div class="download__content">
-        <h2 class="section__header">Download the classic Snake Game for free!</h2>
+        <h2 class="section__header">Download the Collision Simulation Game for free!</h2>
         <p>
           Enjoy endless hours of retro fun
         </p>
         <div class="download__links">
-          <a href="#">
-            <img src="assets/store.jpg" alt="app store" />
+          <a href="https://github.com/GhimirePlan/Web_Based_games-using-Raylib-and-CPP/raw/refs/heads/main/collision/game.exe">
+            <img src="./assests/store.jpg" alt="app store" />
           </a>
         </div>
       </div>
-      <div class="download__image">
-        <img src="assets/download.png" alt="download" />
-      </div>
-    </div>
+      
   </section>
 
   <footer>
@@ -183,7 +178,7 @@
       </div>
     </div>
     <div class="section__container footer__bar">
-      <h4>Snake Game</h4>
+      <h4>Collision Simulation Game</h4>
       <p>Copyright © 2024 PlanGames. All rights reserved.</p>
       <ul class="footer__socials">
         <li>
