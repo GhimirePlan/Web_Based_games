@@ -136,8 +136,9 @@ body {
 }
 
 .featured-content {
-  height: 50vh;
-  padding: 50px;
+  height: 40vh;
+  padding: 20px;
+  margin-bottom: 130px;
 }
 
 .featured-title {
@@ -188,6 +189,7 @@ body {
 
 .movie-list-container {
   padding: 0 20px;
+  padding-bottom: 50px;
 }
 
 .movie-list-wrapper {
@@ -198,9 +200,10 @@ body {
 .movie-list {
   display: flex;
   align-items: center;
-  height: 300px;
+  height: fit-content;
   transform: translateX(0);
   transition: all 1s ease-in-out;
+  flex-wrap: wrap;
 }
 
 .movie-list-item {

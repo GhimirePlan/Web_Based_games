@@ -85,10 +85,11 @@
         <div class="content-container">
             <div class="featured-content"
                 style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/c4.png');">
-                <img class="featured-title" src="img/Raylib_logo.png" alt="">
-                <p class="featured-desc">"PlanGames" is an exhilarating new adventure web game platform developed using
-                    C++ and the Raylib library. Whether you're a seasoned gamer or a newcomer, we promise to
-                    provide hours of entertainment.</p>
+             
+                <img class="featured-title" src="img/godot1.png" alt="" style="width: 280px; height: 230px; margin-left: 10px;">
+
+                
+                <p class="featured-desc">"PlanGames" – Where adventure meets innovation! 🚀 Now featuring games powered by Godot alongside our classic C++ Raylib creations. </p>
                 <a href="./pong">
                     <button class="featured-button">Play Now</button></a>
                 <a href="https://github.com/GhimirePlan/Web_Based_games-using-Raylib-and-CPP/raw/refs/heads/main/pong/Pong%20Game%20-%20PlanGames.exe"><button class="featured-button2">Download Now</button></a>
@@ -96,31 +97,31 @@
             <div class="movie-list-container" id="releases">
                 <h1 class="movie-list-title">NEW RELEASES</h1>
                 <div class="movie-list-wrapper">
-                    <i class="fas fa-chevron-left arrow arrow-left"></i>
                     <div class="movie-list" id="movieList">
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="img/snake.jpeg" alt="">
                             <span class="movie-list-item-title">Snake Game</span>
-                            <p class="movie-list-item-desc">Web-integrated Snake game using C++ and Raylib, featuring classic gameplay with real-time interactions and seamless user experience.</p>
+                            <p class="movie-list-item-desc">Snake game using C++ and Raylib, featuring classic gameplay with real-time interactions and seamless user experience.</p>
                             <a href="./snake"><button class="movie-list-item-button">Play</button></a>
                             <a href="https://github.com/GhimirePlan/Web_Based_games-using-Raylib-and-CPP/raw/refs/heads/main/snake/snake.exe"><button class="movie-list-item-button2">Download</button></a>
                         </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="./collision/assests/logo.png" alt="">
-                            <span class="movie-list-item-title">Collision Simulation</span>
-                            <p class="movie-list-item-desc">Web-integrated collision simulation game using C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
-                            <a href="./collision"><button class="movie-list-item-button">Play</button></a>
-                            <a href="https://github.com/GhimirePlan/Web_Based_games-using-Raylib-and-CPP/raw/refs/heads/main/collision/game.exe"><button class="movie-list-item-button2">Download</button></a>
-                        </div>
+                        
                         <div class="movie-list-item">
                             <img class="movie-list-item-img" src="./pong/assests/loogo.jpg" alt="">
                             <span class="movie-list-item-title">Pong Game</span>
-                            <p class="movie-list-item-desc">Web-integrated Pong game using C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
+                            <p class="movie-list-item-desc">Pong game using C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
                             <a href="./pong"><button class="movie-list-item-button">Play</button></a>
                             <a href="https://github.com/GhimirePlan/Web_Based_games-using-Raylib-and-CPP/raw/refs/heads/main/pong/Pong%20Game%20-%20PlanGames.exe"><button class="movie-list-item-button2">Download</button></a>
                         </div>
+
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./collision/assests/logo.png" alt="">
+                            <span class="movie-list-item-title">Collision Simulation</span>
+                            <p class="movie-list-item-desc">Collision simulation game using C++ and Raylib, showcasing interactive physics and real-time gameplay dynamics.</p>
+                            <a href="./collision"><button class="movie-list-item-button">Play</button></a>
+                            <a href="https://github.com/GhimirePlan/Web_Based_games-using-Raylib-and-CPP/raw/refs/heads/main/collision/game.exe"><button class="movie-list-item-button2">Download</button></a>
+                        </div>
                     </div>
-                    <i class="fas fa-chevron-right arrow arrow-right"></i>
                 </div>
             </div>
             
@@ -154,21 +155,8 @@
                                     onclick="location.href='mailto:pranjal.080bei033@tcioe.edu.np?subject=Write%20your%20subject...%20why%20you%20want%20to%20contact%20me ?&body=Your%20description%20here'">Contact
                                 </button>
                             </div>
-
-                            <div class="movie-list-item">
-                                <img class="movie-list-item-img" src="img/user2.png" alt="">
-                                <span class="movie-list-item-title">Santosh Gadtaula</span>
-                                <p class="movie-list-item-desc">Snake Game</p>
-                                <button class="movie-list-item-button"
-                                    onclick="location.href='mailto:santosh.080bei042@tcioe.edu.np?subject=Write%20your%20subject...%20why%20you%20want%20to%20contact%20me ?&body=Your%20description%20here'">Contact
-                                </button>
-                            </div>
-
-                            <i class="fas fa-chevron-right arrow"></i>
                         </div>
                     </div>
-
-                    <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
         </div>
@@ -207,46 +195,29 @@
     <script src="./app.js"></script>
   
 <script>
-    const movieList = document.getElementById('movieList');
-    const arrowLeft = document.querySelector('.arrow-left');
-    const arrowRight = document.querySelector('.arrow-right');
-    let currentPosition = 0;
-    const itemWidth = 320; // Width of each item plus margin
-    const maxScrollLeft = movieList.scrollWidth - movieList.clientWidth;
+    // Toggle
+    const ball = document.querySelector(".toggle-ball");
+    const items = document.querySelectorAll(
+      ".container, .movie-list-title, .navbar-container, .sidebar, .left-menu-icon, .toggle, body, .profile-container"
+    );
 
-    // Function for manual sliding (left and right)
-    arrowRight.addEventListener('click', () => {
-        if (Math.abs(currentPosition) < maxScrollLeft) {
-            currentPosition -= itemWidth;
-            if (Math.abs(currentPosition) > maxScrollLeft) {
-                currentPosition = -maxScrollLeft; // Prevent overscrolling
-            }
-            movieList.style.transform = `translateX(${currentPosition}px)`;
-        }
+    ball.addEventListener("click", () => {
+      items.forEach((item) => {
+        item.classList.toggle("active");
+      });
+      ball.classList.toggle("active");
     });
 
-    arrowLeft.addEventListener('click', () => {
-        if (currentPosition < 0) {
-            currentPosition += itemWidth;
-            if (currentPosition > 0) {
-                currentPosition = 0; // Prevent overscrolling past the start
-            }
-            movieList.style.transform = `translateX(${currentPosition}px)`;
-        }
-    });
-
-    // Auto-scroll feature every 3 seconds
-    function autoSlide() {
-        if (Math.abs(currentPosition) < maxScrollLeft) {
-            currentPosition -= itemWidth;
-        } else {
-            currentPosition = 0; // Reset to the start
-        }
-        movieList.style.transform = `translateX(${currentPosition}px)`;
+    function scrollToContacts() {
+      document.querySelector('#contacts').scrollIntoView({ behavior: 'smooth' });
+    }
+    function scrollToHome() {
+      document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Start auto-sliding every 3 seconds
-    setInterval(autoSlide, 20000); // 3 seconds interval
+    function scrollToAbout() {
+      document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+    }
 </script>
 </body>
 
