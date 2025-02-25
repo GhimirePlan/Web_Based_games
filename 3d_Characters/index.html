@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>3D Characters Repository</title>
+		<title>3D Characters - PlanGames</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -76,8 +76,8 @@ body {
 	z-index: 1;
 }
 		</style>
-		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
-<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="logo.png"  />
+<link rel="apple-touch-icon" href="logo.png"/>
 <link rel="manifest" href="index.manifest.json">
 
 	</head>
@@ -91,9 +91,10 @@ body {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" src="index.png" alt="">
+			<img id="status-splash" src="logo.png" alt="" style="width: 480px; height: 230px; ">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
+			<p style="margin-top: 580px; ">- Powered by Godot Game Engine.</p>
 		</div>
 
 		<script src="index.js"></script>
@@ -194,6 +195,25 @@ const engine = new Engine(GODOT_CONFIG);
 		}, displayFailureNotice);
 	}
 }());
+		</script>
+		<script>
+			function isMobileDevice() {
+				return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+			}
+		
+			window.onload = function() {
+				if (isMobileDevice()) {
+					alert("Request:  Please use a desktop or laptop for the best experience.");
+				}
+			};
+		
+			document.addEventListener('keydown', function(event) {
+				// Check if the pressed key is the spacebar (key code 32)
+				if (event.key === ' ' || event.keyCode === 32) {
+					// Prevent the default scrolling behavior
+					event.preventDefault();
+				}
+			});
 		</script>
 	</body>
 </html>
