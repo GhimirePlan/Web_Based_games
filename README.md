@@ -1,6 +1,6 @@
 # **Web-Based Game Platform**
 
-A responsive, browser-compatible platform for hosting and playing games developed using C++ and Raylib. The platform provides seamless access to multiple games, offering an engaging experience for users on both desktop and mobile devices.
+A responsive, browser-compatible platform for playing games, initially developed using C++ and Raylib in Semester 2 for OOP project. Expanded in Semester 3 for Computer Graphics project with a new 2D game built using Godot 4.3, offering a fun experience on desktop, mobile, and web.
 
 ---
 
@@ -14,9 +14,9 @@ A responsive, browser-compatible platform for hosting and playing games develope
 ---
 
 ## **Tools and Technologies**
-- **Programming Language**: C++
-- **Game Development Library**: [Raylib](https://www.raylib.com/)
-- **Web Integration Tool**: [Emscripten](https://emscripten.org/)
+- **Programming Language**: C++ , GDScript (Godot) 
+- **Game Development Library**: [Raylib](https://www.raylib.com/), [Godot]
+- **Web Integration Tool**: [Emscripten](https://emscripten.org/), HTML5/WebAssembly (Godot)
 - **Frontend Technologies**: HTML, CSS, JavaScript
 - **Version Control**: Git and GitHub
 - **Hosting and Security**:
@@ -28,12 +28,13 @@ A responsive, browser-compatible platform for hosting and playing games develope
 ## **Project Workflow**
 ### 1. **Game Development**
 - Created games using C++ with the Raylib library for efficient handling of graphics, input, and sound.
-- Employed Object-Oriented Programming (OOP) principles for modularity and reusability.
-- Conducted rigorous testing to ensure smooth gameplay and bug-free functionality.
+- Built a new 2D game in Semester 3 using Godot 4.3 with scenes and nodes.
+-Tested all games for smooth and bug-free play.
 
 ### 2. **Web Platform Integration**
 - Compiled games to WebAssembly using Emscripten for high-performance browser execution.
-- Designed interactive web pages with HTML, CSS, and JavaScript for seamless integration and responsiveness.
+- Exported Godot game to HTML5 for web play and seamless integration.
+- Used HTML, CSS, and JavaScript for a responsive and interactive site.
 
 ### 3. **Deployment**
 - Hosted the website on GitHub Pages for easy updates and maintenance.
@@ -64,6 +65,7 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 
 ## **Acknowledgments**
 - **Raylib** for its powerful and beginner-friendly game development tools.
+- **Godot 4.3** for awesome 2D/3D game features.
 - **Emscripten** for enabling browser compatibility with WebAssembly.
 - **GitHub Pages** and **Cloudflare** for hosting and enhancing the web platform.
 
